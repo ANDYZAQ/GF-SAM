@@ -13,7 +13,7 @@ models/
 
 ### Test One-shot Semantic Segmentation
 
-You can test one-shot semantic segmentation performance of Matcher on COCO-20<sup>i</sup>, run:
+You can test one-shot semantic segmentation performance of GF-SAM on COCO-20<sup>i</sup>, run:
 
 ```
 python main_eval.py  \
