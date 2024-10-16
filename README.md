@@ -13,9 +13,9 @@ See [installation instructions](INSTALL.md).
 
 ## Getting Started
 
-See [Preparing Datasets for Matcher](datasets/README.md).
+See [Preparing Datasets for GF-SAM](datasets/README.md).
 
-See [Getting Started with Matcher](GETTING_STARTED.md). 
+See [Getting Started with GF-SAM](GETTING_STARTED.md). 
 
 ## Todo List
 

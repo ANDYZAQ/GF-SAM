@@ -9,8 +9,8 @@
 
 ### Example conda environment setup
 ```bash
-conda create --name matcher python=3.8.5
-conda activate matcher
+conda create --name gfsam python=3.8.5
+conda activate gfsam
 
 pip install torch==1.13.1 torchvision==0.14.1
 # or install xformers for faster inference of DINOv2
@@ -19,8 +19,8 @@ pip install torch==1.13.1 torchvision==0.14.1
 git clone https://github.com/facebookresearch/detectron2.git
 python -m pip install -e detectron2
 
-git clone https://github.com/aim-uofa/Matcher.git
-cd Matcher
+git clone https://github.com/ANDYZAQ/GF-SAM.git
+cd GF-SAM
 pip install -r requirements.txt
 ```
 
