@@ -25,4 +25,4 @@ See [Getting Started with Matcher](GETTING_STARTED.md).
 
 
 ## Acknowledgement
-[SAM](https://github.com/facebookresearch/segment-anything), [DINOv2](https://github.com/facebookresearch/dinov2), [SegGPT](https://github.com/baaivision/Painter/tree/main/SegGPT), [HSNet](https://github.com/juhongm999/hsnet), [Matcher](https://github.com/aim-uofa/Matcher), [SCCNet](https://github.com/linhanwang/SCCNet) and [detectron2](https://github.com/facebookresearch/detectron2).
+Our implementation is based on these repositories: [SAM](https://github.com/facebookresearch/segment-anything), [DINOv2](https://github.com/facebookresearch/dinov2), [SegGPT](https://github.com/baaivision/Painter/tree/main/SegGPT), [HSNet](https://github.com/juhongm999/hsnet), [Matcher](https://github.com/aim-uofa/Matcher), [SCCNet](https://github.com/linhanwang/SCCNet) and [detectron2](https://github.com/facebookresearch/detectron2). Thanks for their great work!
