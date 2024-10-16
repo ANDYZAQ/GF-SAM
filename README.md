@@ -1,5 +1,16 @@
 <div align="center">
-<h1>[NeurIPS 2024 Spotlight] Official Codes for Bridge the Points: Graph-based Few-shot Segment Anything Semantically
+<h1>[NeurIPS 2024 Spotlight] Official Codes for Bridge the Points: Graph-based Few-shot Segment Anything Semantically</h1>
+
+[Anqi Zhang](https://scholar.google.com/citations?user=DmRZv5sAAAAJ)<sup>1</sup>, &nbsp; 
+[Guangyu Gao](https://scholar.google.com/citations?user=snmRfqMAAAAJ)<sup>1*</sup>, &nbsp;
+[Jianbo Jiao](https://mix.jianbojiao.com/)<sup>2</sup>, &nbsp;
+[Chi Harold Liu](https://scholar.google.com/citations?user=3IgFTEkAAAAJ)<sup>1</sup>, &nbsp;
+[Yunchao Wei](https://weiyc.github.io/)<sup>3</sup>
+
+<sup>1</sup>School of Computer Science, Beijing Institute of Technology<br>
+<sup>2</sup>The MIx group, School of Computer Science, University of Birmingham<br>
+<sup>3</sup>WEI Lab, Institute of Information Science, Beijing Jiaotong University<br>
+
 </div>
 
 ## Overview
