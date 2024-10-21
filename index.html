@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/code.svg">
+  <link rel="icon" href="./static/images/bridge.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -91,15 +91,15 @@
           <h1 class="title is-1 publication-title">Bridge the Points: Graph-based Few-shot Segment Anything Semantically</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a >Anqi Zhang</a><sup>1</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=DmRZv5sAAAAJ">Anqi Zhang</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a>Guangyu Gao</a><sup>1</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=snmRfqMAAAAJ">Guangyu Gao</a><sup>1</sup>,</span>
             <span class="author-block">
               <a href="https://mix.jianbojiao.com/">Jianbo Jiao</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a>Chi Harold Liu</a><sup>1</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=3IgFTEkAAAAJ">Chi Harold Liu</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a>Yunchao Wei</a><sup>3</sup>,</span>
+              <a href="https://weiyc.github.io/">Yunchao Wei</a><sup>3</sup>,</span>
           </div>
 
           <div class="is-size-6 publication-authors">
@@ -110,7 +110,7 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Accepted in NeurIPS 2024 as Spotlight</span>
+            <span class="author-block">Accepted in NeurIPS 2024 as ✨Spotlight</span>
           </div>
 
           <div class="column has-text-centered">
@@ -163,12 +163,182 @@
   </div>
 </section>
 
-<section class="section" id="Abstract">
-  <div class="container is-max-desktop content has-text-centered">
-    <h2 class="title">Code is available without detailed description. </h2>
-    <h2 class="title">The project page will be updated soon. </h2>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/framework.png"
+           alt="Visualization of BARM effect."
+           class="teaser-image"/>
+      <h2 class="content">
+        Overview of our approach, where the Positive-Negative Alignment module recognizes
+the correlation between target features and reference features for point selection, the Point-Mask
+Clustering module efficiently clusters the points based on the coverage of corresponding masks, and
+Post-Gating filters out the false-positive masks for generating final prediction.
+
+      </h2>
+    </div>
   </div>
 </section>
+
+<section class="section" id="Abstract">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The recent advancements in large-scale pre-training techniques have significantly enhanced the capabilities of vision foundation models, notably the Segment Anything Model (SAM), which can generate precise masks based on point and box prompts. 
+            Recent studies extend SAM to <b>Few-shot Semantic Segmentation (FSS)</b>, focusing on prompt generation for SAM-based automatic semantic segmentation. 
+            However, these methods struggle with selecting suitable prompts, require specific hyperparameter settings for different scenarios, and experience prolonged one-shot inference times due to the overuse of SAM, resulting in low efficiency and limited automation ability. 
+          </p>  
+          <p>
+            To address these issues, we propose a simple yet effective approach based on graph analysis. 
+            In particular, a <b>Positive-Negative Alignment</b> module dynamically selects the point prompts for generating masks, especially uncovering the potential of the background context as the negative reference. 
+            Another subsequent <b>Point-Mask Clustering</b> module aligns the granularity of masks and selected points as a directed graph, based on mask coverage over points. 
+            These points are then aggregated by decomposing the weakly connected components of the directed graph in an efficient manner, constructing distinct natural clusters. 
+            Finally, the <b>positive and overshooting gating</b>, benefiting from graph-based granularity alignment, aggregate high-confident masks and filter out the false-positive masks for final prediction, reducing the usage of additional hyperparameters and redundant mask generation. 
+            Extensive experimental analysis across standard FSS, One-shot Part Segmentation, and Cross Domain FSS datasets validate the effectiveness and efficiency of the proposed approach, surpassing state-of-the-art generalist models with a mIoU of 58.7% on COCO-20i and 35.2% on LVIS-92i.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <h2 class="title is-3">Method</h2>
+        <div class="content">
+          <h2 class="title is-4">Positive-Negative Alignment for Point Selection</h2>
+          <img src="./static/images/pna.png"
+               alt="The structure of Positive-Negative Alignment module."
+               width="400"
+               style="margin: 0 auto;"
+               class="image"/>
+          <p>
+            The PNA module efficiently selects point prompts to balance the number of points and coverage of target objects.
+          </p>
+        </div>
+        <div class="content">
+          <h2 class="title is-4"> Point-Mask Clustering with Graph Connectivity</h2>
+            <ul>
+              <li>Each point corresponds to a unique mask from SAM. </li>
+              <li>Selected Points from fine-grained features need to align to masks from coarse-grained features. </li>
+              <li>PMC module constructs directed graph G according to the coverage of masks over other points. </li>
+              <li>Each weakly connected component become a cluster. </li>
+            </ul>
+        </div>
+
+        <div class="content">
+
+            <h2 class="title is-4">Post Gating</h2>
+            
+            <img src="./static/images/postgating.png"
+               alt="Post Gating."
+               class="image"
+               style="margin: 0 auto;"/>
+            <h2 class="title is-5">Positive Gating</h2>
+            <p>
+              Compare number of positive and negative pixels according to positive and negative similarity maps. 
+            </p>
+            <h2 class="title is-5">Overshooting Gating</h2>
+            <p>
+              Retain points having highest similarity on regions of its corresponding mask (with distance factor). 
+            </p>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+      </div>
+    </div>
+    <!--/ Animation. -->
+    
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column">
+          <h2 class="title is-3">Experiment Results</h2>
+          <div class="content">
+            <h2 class="title is-4">Quantitative Results</h2>
+              <img src="./static/images/radar.png"
+               alt="Pascal VOC 2012 Results."
+               class="image"
+               style="margin: 0 auto;"/>
+              <p>
+                To illustrate the Few-shot Semantic Segmentation ability and generalization capacity, we conduct
+three types of sub-tasks, i.e. standard Few-shot Semantic Segmentation, One-shot Part Segmentation,
+and Cross Domain Few-shot Semantic Segmentation. 
+              </p>
+              <h2 class="title is-5">Standard FSS</h2>
+              <p>Datasets: Pascal-5<sup>i</sup>, COCO-20<sup>i</sup>, FSS-1000, and LVIS-92<sup>i</sup></p>
+              <img src="./static/images/stdexp.png"
+               alt="Standard FSS Results."
+               class="image"
+               style="margin: 0 auto;"/>
+              <h2 class="title is-5">One-shot Part Segmentation & Cross Domain FSS</h2>
+              <p>Datasets: PASCAL-Part and PACO-Part; Deepglobe, ISIC2018, and iSAID-5<sup>i</sup></p>
+              <img src="./static/images/otherexp.png"
+               alt="Part Seg and CD-FSS Results."
+               class="image"
+               style="margin: 0 auto;"/>
+            <h2 class="title is-4">Qualitative Results</h2>
+              <img src="./static/images/qual.png"
+               alt="Qualitative Results."
+               class="image"
+               style="margin: 0 auto;"/>
+              <img src="./static/images/stdqual.png"
+               alt="Standard FSS Qualitative Results."
+               class="image"
+               style="margin: 0 auto;"/>
+              <img src="./static/images/partqual.png"
+                alt="Part Seg Qualitative Results."
+                class="image"
+                style="margin: 0 auto;"/>
+              <img src="./static/images/crossqual.png"
+                alt="Cross Domain FSS Qualitative Results."
+                class="image"
+                style="margin: 0 auto;"/>
+          </div>
+        </div>
+        
+      </div>
+      
+
+    <!-- Concurrent Work. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
