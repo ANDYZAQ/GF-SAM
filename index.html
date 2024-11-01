@@ -220,6 +220,7 @@ Post-Gating filters out the false-positive masks for generating final prediction
           <img src="./static/images/pna.png"
                alt="The structure of Positive-Negative Alignment module."
                style="margin: 0 auto;"
+               width="80%"
                class="image"/>
           <p>
             The PNA module efficiently selects point prompts to balance the number of points and coverage of target objects.
@@ -265,9 +266,14 @@ Post-Gating filters out the false-positive masks for generating final prediction
           <div class="content">
             <h2 class="title is-4">Quantitative Results</h2>
               <img src="./static/images/radar.png"
-               alt="Pascal VOC 2012 Results."
+               alt="Comparison with previous generalist and specialist models on various FSS datasets."
                class="image"
                style="margin: 0 auto;"/>
+
+              <img src="./static/images/efficiency_fps.png"
+              alt="Performance-efficiency comparison of FSS models. The numbers inside the points represent the numbers of parameters."
+              class="image"
+              style="margin: 0 auto;"/>
               <p>
                 To illustrate the Few-shot Semantic Segmentation ability and generalization capacity, we conduct
 three types of sub-tasks, i.e. standard Few-shot Semantic Segmentation, One-shot Part Segmentation,
