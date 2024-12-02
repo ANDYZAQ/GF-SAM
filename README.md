@@ -1,5 +1,5 @@
 <div align="center">
-<h1>[NeurIPS 2024 Spotlight] Official Codes for Bridge the Points: Graph-based Few-shot Segment Anything Semantically</h1>
+<h1>[NeurIPS 2024 Spotlight✨] Official Codes for Bridge the Points: Graph-based Few-shot Segment Anything Semantically</h1>
 
 [Anqi Zhang](https://scholar.google.com/citations?user=DmRZv5sAAAAJ)<sup>1</sup>, &nbsp; 
 [Guangyu Gao](https://scholar.google.com/citations?user=snmRfqMAAAAJ)<sup>1*</sup>, &nbsp;
