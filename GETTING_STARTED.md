@@ -27,3 +27,8 @@ python main_eval.py  \
 * You can find more commands in `scripts/` for other datasets.
 
 
+### Start Gradio Demo
+
+```
+python app.py
+```
