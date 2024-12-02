@@ -80,7 +80,7 @@ demo = gr.Interface(
      gr.Image(label="Target Image", type="pil")], 
     outputs=[gr.Image(label="Prediction"), 
              gr.Image(label="Points")],
-    allow_flagging=False
+    flagging_mode="never"
 )
 
 demo.launch()
