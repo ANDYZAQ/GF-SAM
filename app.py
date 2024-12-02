@@ -24,7 +24,7 @@ transform = transforms.Compose([
             transforms.ToTensor()
         ])
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-device = torch.device("cpu")
+# device = torch.device("cpu")
 args.device = device
 GFSAM = build_model(args)
 
