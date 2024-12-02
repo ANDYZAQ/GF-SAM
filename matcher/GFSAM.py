@@ -7,8 +7,6 @@ import torch.nn.functional as F
 from torchvision import transforms
 
 import numpy as np
-import cv2
-import ot
 import math
 from scipy.optimize import linear_sum_assignment
 import matplotlib.pyplot as plt
@@ -131,9 +129,9 @@ class GFSAM:
 
             selected_points = self.point_consistency_dis(tar_feats_sem, tar_masks, labels_weak, components_weak, fgbg_labels, coord_f)
 
-            pred_masks, prob_masks = self.triplet_selection_b(tar_masks, labels_weak, components_weak, selected_points, mean_sim_map, coord_f, cls_scores)
+            pred_masks, prob_masks = self.triplet_selection_b(tar_masks, labels_weak, selected_points, mean_sim_map, coord_f, cls_scores)
 
-        return pred_masks, prob_masks
+        return pred_masks, (coord_xy, selected_points)
     
     def triplet_selection_b(self, tar_masks, cluster_labels, coord_se_labels, mean_sim_map, coord_f, cls_scores):
         """Select and merge the masks"""
@@ -278,7 +276,7 @@ class GFSAM:
         # translate all points to coordinates
         points_f = np.argwhere(sim_map_hot.T > 0)
         points = self.predictor.transform.apply_coords(points_f, sim_map.shape[-2:])
-        coord_labels = np.ones(points.shape[0], dtype=np.int)
+        coord_labels = np.ones(points.shape[0], dtype=np.int32)
 
         return points, coord_labels, sim_map_hot, points_f
 
