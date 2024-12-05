@@ -13,6 +13,13 @@
 
 [![Paper](https://img.shields.io/badge/arxiv-2410.06964-floralwhite)](https://arxiv.org/abs/2410.06964)
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bridge-the-points-graph-based-few-shot/few-shot-semantic-segmentation-on-coco-20i-1)](https://paperswithcode.com/sota/few-shot-semantic-segmentation-on-coco-20i-1?p=bridge-the-points-graph-based-few-shot)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bridge-the-points-graph-based-few-shot/few-shot-semantic-segmentation-on-coco-20i-5)](https://paperswithcode.com/sota/few-shot-semantic-segmentation-on-coco-20i-5?p=bridge-the-points-graph-based-few-shot)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bridge-the-points-graph-based-few-shot/few-shot-semantic-segmentation-on-pascal-5i-1)](https://paperswithcode.com/sota/few-shot-semantic-segmentation-on-pascal-5i-1?p=bridge-the-points-graph-based-few-shot)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bridge-the-points-graph-based-few-shot/few-shot-semantic-segmentation-on-pascal-5i-5)](https://paperswithcode.com/sota/few-shot-semantic-segmentation-on-pascal-5i-5?p=bridge-the-points-graph-based-few-shot)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bridge-the-points-graph-based-few-shot/few-shot-semantic-segmentation-on-fss-1000-1)](https://paperswithcode.com/sota/few-shot-semantic-segmentation-on-fss-1000-1?p=bridge-the-points-graph-based-few-shot)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bridge-the-points-graph-based-few-shot/few-shot-semantic-segmentation-on-fss-1000-5)](https://paperswithcode.com/sota/few-shot-semantic-segmentation-on-fss-1000-5?p=bridge-the-points-graph-based-few-shot)
+
 </div>
 
 ## Overview
